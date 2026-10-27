@@ -1,0 +1,39 @@
+{
+  "nombre": "consejo_131026",
+  "video": "NOA/consejo_131026.mp4",
+  "resultados_vision": "PAULA/consejo_integrado/resultados",
+  "salida": "FIRDAOUS/salidas/consejo_131026",
+  "fuente": "https://www.lamoncloa.gob.es/multimedia/galeriasfotograficas/consejoministros/Paginas/2026/131026-rueda-prensa-consejo.aspx",
+  "excluir_planos": [
+    64
+  ],
+  "umbrales": {
+    "max_personas_primer_plano": 3,
+    "min_area_primer_plano": 25,
+    "min_area_plano_medio": 15
+  },
+  "modelo_whisper": "large-v3",
+  "grupos": [
+    {
+      "id": "A",
+      "texto": "VLIRA",
+      "persona": "sira_rego",
+      "categoria": "mujer",
+      "nombre": "Sira Rego"
+    },
+    {
+      "id": "B",
+      "texto": "RLVS",
+      "persona": "elma_saiz",
+      "categoria": "mujer",
+      "nombre": "Elma Saiz"
+    },
+    {
+      "id": "C",
+      "texto": "",
+      "persona": "arcadi_espana",
+      "categoria": "hombre",
+      "nombre": "Arcadi España"
+    }
+  ]
+}

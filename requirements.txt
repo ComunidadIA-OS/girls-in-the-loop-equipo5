@@ -1,0 +1,22 @@
+# Fase de visión (PAULA/consejo_integrado) — versiones usadas en la ejecución registrada
+ultralytics==8.4.182
+scenedetect==0.6.6
+easyocr==1.7.2
+lap==0.5.13
+torch==2.12.1
+torchvision==0.27.1
+opencv-python==4.13.0.92
+PyYAML==6.0.3
+
+# Fase de métricas e informe (FIRDAOUS/pipeline.py)
+numpy==2.5.2
+pandas==3.0.3
+faster-whisper>=1.0
+matplotlib>=3.8
+tabulate>=0.9
+
+# Interfaz (app.py)
+streamlit>=1.41
+plotly>=5.20
+
+# Además: FFmpeg (ffmpeg y ffprobe) instalado en el sistema

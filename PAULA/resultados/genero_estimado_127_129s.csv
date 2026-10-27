@@ -1,0 +1,5 @@
+track_id,recortes_analizados,recortes_con_cara,prob_mujer_media,edad_media_estimada,genero_aparente_estimado,fuente,estado_revision
+visual_001,12,12.0,99.15401713053386,36.916666666666664,mujer,estimacion_deepface,pendiente
+visual_002,12,12.0,23.508646368980408,35.0,hombre,estimacion_deepface,pendiente
+visual_003,12,12.0,2.898062139749527,41.666666666666664,hombre,estimacion_deepface,pendiente
+visual_004,1,,,,sin_datos,estimacion_deepface,pendiente

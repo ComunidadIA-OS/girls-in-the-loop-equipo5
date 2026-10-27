@@ -1,0 +1,12 @@
+{
+  "video": "/workspace/equipo5/NOA/consejo_131026.mp4",
+  "salida": "/workspace/equipo5/PAULA/consejo_integrado/resultados",
+  "inicio_s": 0.0,
+  "fin_s": null,
+  "muestras_s": 10,
+  "imgsz": 960,
+  "exigir_gpu": true,
+  "modelo": "/workspace/equipo5/PAULA/consejo_integrado/modelos/yolo11m.pt",
+  "ocr_cada_s": 0.5,
+  "conf_ocr": 0.6
+}

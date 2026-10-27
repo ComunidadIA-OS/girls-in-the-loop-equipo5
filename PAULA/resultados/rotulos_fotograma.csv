@@ -1,0 +1,5 @@
+video_id,frame_index,timestamp_s,timestamp_source,bloque,texto,score_ocr,poligono_px,estado_revision,centro_y,centro_x,tipo_provisional,requiere_revision
+prueba_01,3930,131.0,opencv_pos_msec,10,ÚLTIMA HORA,0.9944567934690066,"[[554.0, 490.0], [726.0, 490.0], [726.0, 518.0], [554.0, 518.0]]",pendiente,504.0,640.0,rotulo_inferior,False
+prueba_01,3930,131.0,opencv_pos_msec,11,MÁXIMA TENSIÓN EN LA ACAMPADA DE SOL,0.8595270897195402,"[[311.0, 533.0], [971.0, 533.0], [971.0, 571.0], [311.0, 571.0]]",pendiente,552.0,641.0,rotulo_inferior,False
+prueba_01,3930,131.0,opencv_pos_msec,12,AGREDEN A UN EQUIPO DE ESPEJO PÚBLICO QUE GRABABA EN LA,0.7987711324209122,"[[263.0, 581.0], [1016.0, 581.0], [1016.0, 614.0], [263.0, 614.0]]",pendiente,597.5,639.5,rotulo_inferior,False
+prueba_01,3930,131.0,opencv_pos_msec,14,ACAMPADA DE SOL,0.9403447070921692,"[[526.0, 612.0], [754.0, 612.0], [754.0, 638.0], [526.0, 638.0]]",pendiente,625.0,640.0,rotulo_inferior,False
