@@ -12,14 +12,14 @@
 </p>
 
 <p align="center">
+  <a href="#-quiénes-somos">Quiénes somos</a> ·
   <a href="#-la-pregunta">La pregunta</a> ·
   <a href="#-qué-medimos">Qué medimos</a> ·
   <a href="#-resultados">Resultados</a> ·
   <a href="#-cómo-funciona">Cómo funciona</a> ·
   <a href="#-la-interfaz">Interfaz</a> ·
   <a href="#-instalación-y-uso">Instalación</a> ·
-  <a href="#-de-prototipo-a-servicio-público">Producción</a> ·
-  <a href="#-quiénes-somos">Quiénes somos</a>
+  <a href="#-de-prototipo-a-servicio-público">Producción</a>
 </p>
 
 <p align="center">
@@ -27,6 +27,44 @@
 </p>
 
 > **Girls in the Loop** es un sistema de IA abierta que analiza solo, sin revisión manual, las ruedas de prensa del Consejo de Ministros: detecta quién ocupa la pantalla, transcribe quién tiene la palabra y mide si el protagonismo de mujeres y hombres es proporcional a cuántos comparecen. El género nunca se adivina a partir de la imagen: se documenta con el cargo oficial publicado.
+
+---
+
+## 💜 Quiénes somos
+
+<table>
+<tr>
+<td align="center" width="33%" valign="top">
+<img src="docs/readme/firdaous.png" width="170" alt="Firdaous Boulahfa El Mourabit"><br>
+<h3>Firdaous Boulahfa El Mourabit</h3>
+<b>Lingüista computacional · AI Engineer</b><br>
+<sub>📍 Madrid, España</sub>
+<p align="left">Del lenguaje a la IA aplicada. En el proyecto se ocupó de las <b>métricas de protagonismo</b>, la <b>transcripción y atribución de la voz</b>, la <b>interfaz</b> y el <b>sistema automático</b> que analiza cualquier rueda de prensa de La Moncloa sin revisión manual.</p>
+<a href="https://www.linkedin.com/in/firdaous-boulahfa-el-mourabit-871b11343/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+<a href="https://github.com/bfir"><img src="https://img.shields.io/badge/GitHub-24163f?logo=github&logoColor=white" alt="GitHub"></a>
+<a href="mailto:boulahfafirdaous@gmail.com"><img src="https://img.shields.io/badge/Email-6d28d9?logo=gmail&logoColor=white" alt="Email"></a>
+</td>
+<td align="center" width="33%" valign="top">
+<img src="docs/readme/paula.png" width="170" alt="Paula García Fernández"><br>
+<h3>Paula García Fernández, PhD</h3>
+<b>Senior Data Scientist · Applied AI &amp; Computer Vision</b><br>
+<sub>📍 Madrid, España</sub>
+<p align="left">Visión por computador aplicada. En el proyecto construyó el <b>motor de visión integrado</b> (planos, personas y rótulos, reproducible y reanudable), probó los <b>modelos de imagen</b> y tomó la <b>decisión ética</b> de no inferir el género a partir de la cara.</p>
+<a href="https://www.linkedin.com/in/paula-garcia-fernandez-pgf3712/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+<a href="https://github.com/pgf3712"><img src="https://img.shields.io/badge/GitHub-24163f?logo=github&logoColor=white" alt="GitHub"></a>
+<a href="mailto:infopaulagarciafernandez@gmail.com"><img src="https://img.shields.io/badge/Email-6d28d9?logo=gmail&logoColor=white" alt="Email"></a>
+</td>
+<td align="center" width="33%" valign="top">
+<img src="docs/readme/nouhaila.png" width="170" alt="Nouhaila Boulahfa El Mourabit"><br>
+<h3>Nouhaila Boulahfa El Mourabit</h3>
+<b>Psicóloga · IT Recruiter · Metodología</b><br>
+<sub>📍 Madrid, España</sub>
+<p align="left">Psicología, personas y método. En el proyecto desarrolló la <b>detección de cortes de plano</b> y la <b>detección y seguimiento de personas</b>, y probó los modelos sobre la rueda de prensa para elegir los que usa el sistema.</p>
+<a href="https://www.linkedin.com/in/nouhaila-boulahfa-el-mourabit-50773a350/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+<a href="mailto:nouhailaboulahfa@gmail.com"><img src="https://img.shields.io/badge/Email-6d28d9?logo=gmail&logoColor=white" alt="Email"></a>
+</td>
+</tr>
+</table>
 
 ---
 
@@ -219,41 +257,6 @@ ovhai app run <registro>/girls-in-the-loop:1 --gpu 1 --default-http-port 8080
 - [ ] Temas tratados por cada persona a partir de la transcripción
 - [ ] Ejecución semanal automática y panel público
 - [ ] Alternativa con licencia permisiva (detector BSD en lugar de YOLO)
-
-## 💜 Quiénes somos
-
-<table>
-<tr>
-<td align="center" width="33%" valign="top">
-<img src="docs/readme/firdaous.png" width="170" alt="Firdaous Boulahfa El Mourabit"><br>
-<h3>Firdaous Boulahfa El Mourabit</h3>
-<b>Lingüista computacional · AI Engineer</b><br>
-<sub>📍 Madrid, España</sub>
-<p align="left">Del lenguaje a la IA aplicada. En el proyecto se ocupó de las <b>métricas de protagonismo</b>, la <b>transcripción y atribución de la voz</b>, la <b>interfaz</b> y el <b>sistema automático</b> que analiza cualquier rueda de prensa de La Moncloa sin revisión manual.</p>
-<a href="https://www.linkedin.com/in/firdaous-boulahfa-el-mourabit-871b11343/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-<a href="https://github.com/bfir"><img src="https://img.shields.io/badge/GitHub-24163f?logo=github&logoColor=white" alt="GitHub"></a>
-<a href="mailto:boulahfafirdaous@gmail.com"><img src="https://img.shields.io/badge/Email-6d28d9?logo=gmail&logoColor=white" alt="Email"></a>
-</td>
-<td align="center" width="33%" valign="top">
-<img src="docs/readme/paula.png" width="170" alt="Paula García Fernández"><br>
-<h3>Paula García Fernández, PhD</h3>
-<b>Senior Data Scientist · Applied AI &amp; Computer Vision</b><br>
-<sub>📍 Madrid, España</sub>
-<p align="left">Visión por computador aplicada. En el proyecto construyó el <b>motor de visión integrado</b> (planos, personas y rótulos, reproducible y reanudable), probó los <b>modelos de imagen</b> y tomó la <b>decisión ética</b> de no inferir el género a partir de la cara.</p>
-<a href="https://www.linkedin.com/in/paula-garcia-fernandez-pgf3712/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-<a href="https://github.com/pgf3712"><img src="https://img.shields.io/badge/GitHub-24163f?logo=github&logoColor=white" alt="GitHub"></a>
-<a href="mailto:infopaulagarciafernandez@gmail.com"><img src="https://img.shields.io/badge/Email-6d28d9?logo=gmail&logoColor=white" alt="Email"></a>
-</td>
-<td align="center" width="33%" valign="top">
-<img src="docs/readme/nouhaila.png" width="170" alt="Nouhaila Boulahfa El Mourabit"><br>
-<h3>Nouhaila Boulahfa El Mourabit</h3>
-<b>Psicóloga · IT Recruiter · Metodología</b><br>
-<sub>📍 Madrid, España</sub>
-<p align="left">Psicología, personas y método. En el proyecto desarrolló la <b>detección de cortes de plano</b> y la <b>detección y seguimiento de personas</b>, y probó los modelos sobre la rueda de prensa para elegir los que usa el sistema.</p>
-<a href="https://www.linkedin.com/in/nouhaila-boulahfa-el-mourabit-50773a350/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-</td>
-</tr>
-</table>
 
 <p align="center"><sub>Equipo 5 del reto <b>«Mujeres por la IA Abierta»</b> de la Secretaría de Estado de Digitalización e Inteligencia Artificial (SEDIA), en el marco de la Comunidad IA de Código Abierto. Colaboran UPC-IDEAI, COEINF (donesCOEINF) y OVHcloud.</sub></p>
 
