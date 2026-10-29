@@ -2,34 +2,6 @@
   <img src="docs/readme/banner.png" alt="Girls in the Loop: protagonismo por género en las ruedas de prensa del Consejo de Ministros, medido con IA abierta" width="100%">
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/licencia-AGPL--3.0-6d28d9" alt="Licencia AGPL-3.0">
-  <img src="https://img.shields.io/badge/Python-3.10–3.13-24163f?logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/visión-YOLO11%20·%20ByteTrack%20·%20EasyOCR-6d28d9" alt="Visión">
-  <img src="https://img.shields.io/badge/voz-faster--whisper-0e8f86" alt="Voz">
-  <img src="https://img.shields.io/badge/interfaz-Streamlit-e0457b?logo=streamlit&logoColor=white" alt="Streamlit">
-  <img src="https://img.shields.io/badge/reto-Mujeres%20por%20la%20IA%20Abierta-a3367a" alt="Reto Mujeres por la IA Abierta">
-</p>
-
-<p align="center">
-  <a href="#-quiénes-somos">Quiénes somos</a> ·
-  <a href="#-la-pregunta">La pregunta</a> ·
-  <a href="#-qué-medimos">Qué medimos</a> ·
-  <a href="#-resultados">Resultados</a> ·
-  <a href="#-cómo-funciona">Cómo funciona</a> ·
-  <a href="#-la-interfaz">Interfaz</a> ·
-  <a href="#-instalación-y-uso">Instalación</a> ·
-  <a href="#-de-prototipo-a-servicio-público">Producción</a>
-</p>
-
-<p align="center">
-  <img src="docs/readme/demo.gif" alt="Demostración de la interfaz: se pega un enlace de La Moncloa y se recorren los resultados" width="88%">
-</p>
-
-> **Girls in the Loop** es un sistema de IA abierta que analiza solo, sin revisión manual, las ruedas de prensa del Consejo de Ministros: detecta quién ocupa la pantalla, transcribe quién tiene la palabra y mide si el protagonismo de mujeres y hombres es proporcional a cuántos comparecen. El género nunca se adivina a partir de la imagen: se documenta con el cargo oficial publicado.
-
----
-
 ## 💜 Quiénes somos
 
 <table>
@@ -67,6 +39,36 @@
 </table>
 
 ---
+
+
+<p align="center">
+  <img src="https://img.shields.io/badge/licencia-AGPL--3.0-6d28d9" alt="Licencia AGPL-3.0">
+  <img src="https://img.shields.io/badge/Python-3.10–3.13-24163f?logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/visión-YOLO11%20·%20ByteTrack%20·%20EasyOCR-6d28d9" alt="Visión">
+  <img src="https://img.shields.io/badge/voz-faster--whisper-0e8f86" alt="Voz">
+  <img src="https://img.shields.io/badge/interfaz-Streamlit-e0457b?logo=streamlit&logoColor=white" alt="Streamlit">
+  <img src="https://img.shields.io/badge/reto-Mujeres%20por%20la%20IA%20Abierta-a3367a" alt="Reto Mujeres por la IA Abierta">
+</p>
+
+<p align="center">
+  <a href="#-quiénes-somos">Quiénes somos</a> ·
+  <a href="#-la-pregunta">La pregunta</a> ·
+  <a href="#-qué-medimos">Qué medimos</a> ·
+  <a href="#-resultados">Resultados</a> ·
+  <a href="#-cómo-funciona">Cómo funciona</a> ·
+  <a href="#-la-interfaz">Interfaz</a> ·
+  <a href="#-instalación-y-uso">Instalación</a> ·
+  <a href="#-de-prototipo-a-servicio-público">Producción</a>
+</p>
+
+<p align="center">
+  <img src="docs/readme/demo.gif" alt="Demostración de la interfaz: se pega un enlace de La Moncloa y se recorren los resultados" width="88%">
+</p>
+
+> **Girls in the Loop** es un sistema de IA abierta que analiza solo, sin revisión manual, las ruedas de prensa del Consejo de Ministros: detecta quién ocupa la pantalla, transcribe quién tiene la palabra y mide si el protagonismo de mujeres y hombres es proporcional a cuántos comparecen. El género nunca se adivina a partir de la imagen: se documenta con el cargo oficial publicado.
+
+---
+
 
 ## <img src="docs/readme/av1.png" height="44" align="center"> La pregunta
 
