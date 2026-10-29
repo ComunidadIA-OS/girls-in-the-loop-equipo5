@@ -66,6 +66,12 @@
   <img src="docs/readme/demo.gif" alt="Demostración de la interfaz: se pega un enlace de La Moncloa y se recorren los resultados" width="88%">
 </p>
 
+<p align="center">
+  🎬 <a href="presentacion/Girls_in_the_Loop_video_5min.mp4"><b>Vídeo de presentación</b></a> (4 min) ·
+  📑 <a href="presentacion/Girls_in_the_Loop_presentacion.pptx"><b>Presentación completa</b></a> ·
+  ⏱️ <a href="presentacion/Girls_in_the_Loop_5min.pptx"><b>Presentación de 5 minutos</b></a>
+</p>
+
 > **Girls in the Loop** es un sistema de IA abierta que analiza solo, sin revisión manual, las ruedas de prensa del Consejo de Ministros: detecta quién ocupa la pantalla, transcribe quién tiene la palabra y mide si el protagonismo de mujeres y hombres es proporcional a cuántos comparecen. El género nunca se adivina a partir de la imagen: se documenta con el cargo oficial publicado.
 
 ---
@@ -285,6 +291,7 @@ ovhai app run <registro>/girls-in-the-loop:1 --gpu 1 --default-http-port 8080
 | `FIRDAOUS/salidas/` | Resultados: métricas CSV, transcripción, informes y gráficos |
 | `Dockerfile` | Imagen para desplegar con GPU |
 | `docs/readme/` | Imágenes de este README |
+| `presentacion/` | Presentación completa (20 diapositivas), presentación de 5 minutos y vídeo de presentación del equipo (4 min 15 s) |
 | `NOA/` | Prototipos de Nouhaila: cortes de plano, detección y seguimiento, pruebas de modelos |
 | `PAULA/*.ipynb`, `PAULA/resultados/` | Prototipos de Paula: OCR, pruebas de imagen y motor en una celda |
 | `FIRDAOUS/01_…08_*.py` | Prototipos de Firdaous, sustituidos por `pipeline.py` |

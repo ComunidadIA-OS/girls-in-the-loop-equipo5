@@ -242,5 +242,8 @@ cola/
 *.wav
 *consejo_de_ministros_27_10_2026_*
 
-# Presentaciones y guion: se entregan aparte, no van al repositorio
-presentacion/
+# De la carpeta presentacion/ solo se suben las presentaciones (.pptx)
+presentacion/*
+!presentacion/*.pptx
+presentacion/~$*
+!presentacion/Girls_in_the_Loop_video_5min.mp4
