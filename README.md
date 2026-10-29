@@ -14,7 +14,7 @@
 <p align="left">Del lenguaje a la IA aplicada. En el proyecto se ocupó de las <b>métricas de protagonismo</b>, la <b>transcripción y atribución de la voz</b>, la <b>interfaz</b> y el <b>sistema automático</b> que analiza cualquier rueda de prensa de La Moncloa sin revisión manual.</p>
 <a href="https://www.linkedin.com/in/firdaous-boulahfa-el-mourabit-871b11343/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn"></a>
 <a href="https://github.com/bfir"><img src="https://img.shields.io/badge/GitHub-24163f?logo=github&logoColor=white" alt="GitHub"></a>
-<br><img src="docs/readme/correo_firdaous.png" width="210" alt="Avatar de Firdaous diciendo «¡Escríbeme!»"><br>
+<br><img src="docs/readme/correo_firdaous.png" width="180" alt="Avatar de Firdaous diciendo «¿Hablamos?»"><br>
 <code>boulahfafirdaous@gmail.com</code>
 </td>
 <td align="center" width="33%" valign="top">
@@ -25,7 +25,7 @@
 <p align="left">Visión por computador aplicada. En el proyecto construyó el <b>motor de visión integrado</b> (planos, personas y rótulos, reproducible y reanudable), probó los <b>modelos de imagen</b> y tomó la <b>decisión ética</b> de no inferir el género a partir de la cara.</p>
 <a href="https://www.linkedin.com/in/paula-garcia-fernandez-pgf3712/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn"></a>
 <a href="https://github.com/pgf3712"><img src="https://img.shields.io/badge/GitHub-24163f?logo=github&logoColor=white" alt="GitHub"></a>
-<br><img src="docs/readme/correo_paula.png" width="210" alt="Avatar de Paula diciendo «¡Escríbeme!»"><br>
+<br><img src="docs/readme/correo_paula.png" width="180" alt="Avatar de Paula diciendo «¿Conectamos?»"><br>
 <code>infopaulagarciafernandez@gmail.com</code>
 </td>
 <td align="center" width="33%" valign="top">
@@ -36,7 +36,7 @@
 <p align="left">Psicología, personas y método. En el proyecto desarrolló la <b>detección de cortes de plano</b> y la <b>detección y seguimiento de personas</b>, y probó los modelos sobre la rueda de prensa para elegir los que usa el sistema.</p>
 <a href="https://www.linkedin.com/in/nouhaila-boulahfa-el-mourabit-50773a350/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn"></a>
 <a href="https://github.com/nouhailaboulahfa"><img src="https://img.shields.io/badge/GitHub-24163f?logo=github&logoColor=white" alt="GitHub"></a>
-<br><img src="docs/readme/correo_nouhaila.png" width="210" alt="Avatar de Nouhaila diciendo «¡Escríbeme!»"><br>
+<br><img src="docs/readme/correo_nouhaila.png" width="180" alt="Avatar de Nouhaila diciendo «¡Escríbeme!»"><br>
 <code>nouhailaboulahfa@gmail.com</code>
 </td>
 </tr>
