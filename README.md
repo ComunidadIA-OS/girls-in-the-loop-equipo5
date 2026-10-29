@@ -33,6 +33,7 @@
 <sub>📍 Madrid, España</sub>
 <p align="left">Psicología, personas y método. En el proyecto desarrolló la <b>detección de cortes de plano</b> y la <b>detección y seguimiento de personas</b>, y probó los modelos sobre la rueda de prensa para elegir los que usa el sistema.</p>
 <a href="https://www.linkedin.com/in/nouhaila-boulahfa-el-mourabit-50773a350/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+<a href="https://github.com/nouhailaboulahfa"><img src="https://img.shields.io/badge/GitHub-24163f?logo=github&logoColor=white" alt="GitHub"></a>
 <a href="mailto:nouhailaboulahfa@gmail.com"><img src="https://img.shields.io/badge/Email-6d28d9?logo=gmail&logoColor=white" alt="Email"></a>
 </td>
 </tr>
