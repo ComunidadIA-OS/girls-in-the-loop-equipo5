@@ -64,22 +64,37 @@ vídeo .mp4
 
 ## Interfaz
 
-En Windows: doble clic en `ABRIR_INTERFAZ.bat`. En cualquier sistema:
+En Windows: doble clic en `ABRIR_INTERFAZ.bat` desde el explorador de archivos. En cualquier sistema:
 
 ```bash
-pip install -r requirements.txt
+pip install streamlit plotly pandas matplotlib tabulate   # solo ver resultados
+pip install -r requirements.txt                           # también analizar vídeos (GPU)
 streamlit run app.py
 ```
 
 | Pestaña | Qué hace |
 |---|---|
 | 📊 Resultados | Indicadores de paridad, gráficos interactivos, tabla por persona, transcripción por turnos con filtro por hablante y búsqueda, descargas |
-| ⚙️ Nuevo análisis / continuar | Crea el análisis de otro vídeo y lo lleva por los 4 pasos (visión → quién es quién → métricas → informe), con estado ✅/⏳/❌ y registro de cada proceso. Los pasos largos corren en segundo plano: se puede cerrar la página y volver |
-| ⚖️ Comparar | Índice de paridad de todas las ruedas de prensa analizadas |
+| ⚙️ Nuevo análisis / continuar | Sube un vídeo desde el navegador y llévalo por los 4 pasos (visión → quién es quién → métricas → informe), con estado 🕒/⏳/✅/❌ y registro de cada proceso |
+| ⚖️ Comparar | Índice de paridad de las ruedas de prensa que puedes ver |
 
-- **En cualquier portátil:** ver resultados, regenerar el informe, reclasificar planos.
-- **En la VM con GPU:** además, analizar vídeos nuevos. La barra lateral indica qué hay disponible (FFmpeg, GPU, faster-whisper) y la app desactiva los pasos que la máquina no puede ejecutar.
-- **Publicarla:** OVHcloud AI Apps despliega Streamlit directamente (`streamlit run app.py --server.port 8080 --server.address 0.0.0.0`).
+Pensada para que varias personas la usen a la vez en un servidor con GPU:
+
+- **Cola de trabajos** (`cola.py`): los pasos pesados se ejecutan de uno en uno para no saturar la GPU. Cada persona ve cuántos trabajos tiene por delante y puede cerrar la página y volver; si el servidor se reinicia, la cola se retoma.
+- **Análisis privados:** cada análisis nuevo recibe un código y solo se ve con el enlace que lo contiene (`?a=CÓDIGO`) o escribiendo el código en la barra lateral. El análisis del 13/10 es público.
+- **Sin GPU** (un portátil) se pueden ver resultados, reclasificar planos y regenerar informes; la app desactiva los pasos que la máquina no puede ejecutar.
+
+### Publicarla con GPU (OVHcloud AI Deploy)
+
+El `Dockerfile` empaqueta la app con FFmpeg y todas las dependencias.
+
+```bash
+docker build -t <registro>/girls-in-the-loop:1 .
+docker push <registro>/girls-in-the-loop:1
+ovhai app run <registro>/girls-in-the-loop:1 --gpu 1 --default-http-port 8080 --unsecure-http
+```
+
+`--unsecure-http` hace que el enlace sea accesible sin cuenta de OVH. Comprueba las opciones con `ovhai app run --help`. Los archivos del contenedor se pierden si la app se reinicia; para conservar vídeos y resultados hay que montar un volumen de Object Storage en `/workspace`. Una GPU encendida consume créditos por hora.
 
 ## Reproducir desde la terminal
 
@@ -102,7 +117,8 @@ Sin GPU, Whisper se ejecuta en CPU (mucho más lento; conviene `"modelo_whisper"
 
 | Ruta | Contenido |
 |---|---|
-| `app.py` | **Interfaz** (Streamlit) |
+| `app.py`, `cola.py` | **Interfaz** (Streamlit) y cola de trabajos |
+| `Dockerfile` | Imagen para publicarla con GPU |
 | `PAULA/consejo_integrado/` | **Fase de visión final** (motor, config y resultados) |
 | `FIRDAOUS/pipeline.py`, `FIRDAOUS/config_131026.json` | **Fase de métricas e informe final** |
 | `FIRDAOUS/salidas/consejo_131026/` | **Resultados finales**: métricas CSV, transcripción, informe y gráficos |
@@ -132,6 +148,6 @@ Sin GPU, Whisper se ejecuta en CPU (mucho más lento; conviene `"modelo_whisper"
 | pandas, NumPy, matplotlib | análisis y gráficos | BSD / PSF-compatible |
 | Streamlit, Plotly | interfaz | Apache-2.0 / MIT |
 
-**Pendiente de decidir:** el repositorio tiene licencia MIT, pero Ultralytics YOLO es AGPL-3.0, que exige publicar bajo AGPL-3.0 el sistema que lo usa. Opciones: cambiar la licencia del repositorio a AGPL-3.0 o sustituir el detector por uno con licencia permisiva (p. ej. Faster R-CNN de torchvision, BSD-3, ya probado en `PAULA/prueba_imagen.ipynb`).
+**Licencia del proyecto: AGPL-3.0** (ver `LICENSE`), porque Ultralytics YOLO es AGPL-3.0 y exige esa licencia al sistema que lo usa. Para publicarlo con una licencia permisiva (MIT) habría que sustituir el detector, p. ej. por Faster R-CNN de torchvision (BSD-3), ya probado en `PAULA/prueba_imagen.ipynb`.
 
 El vídeo es material público de La Moncloa y no se redistribuye en el repositorio.

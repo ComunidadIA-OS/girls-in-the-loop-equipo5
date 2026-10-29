@@ -231,3 +231,13 @@ proceso.lock
 FALLO.txt
 modelos/
 modelos_easyocr/
+
+# Interfaz: vídeos subidos y cola de trabajos
+videos/
+cola/
+*.cola
+*.pt
+
+# Audio extraído (se regenera) y análisis privados de prueba
+*.wav
+*consejo_de_ministros_27_10_2026_*

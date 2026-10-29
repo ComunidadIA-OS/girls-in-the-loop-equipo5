@@ -1,0 +1,12 @@
+{
+  "video": "C:\\Users\\bfir2\\OneDrive\\Images\\Bureau\\equipo5\\videos\\consejo_271026.mp4",
+  "salida": "C:\\Users\\bfir2\\OneDrive\\Images\\Bureau\\equipo5\\PAULA\\consejo_integrado\\resultados_consejo_271026",
+  "inicio_s": 0.0,
+  "fin_s": null,
+  "muestras_s": 2,
+  "imgsz": 640,
+  "exigir_gpu": false,
+  "modelo": "yolo11m.pt",
+  "ocr_cada_s": 2.0,
+  "conf_ocr": 0.6
+}

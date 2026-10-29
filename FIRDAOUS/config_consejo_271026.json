@@ -1,0 +1,48 @@
+{
+  "nombre": "consejo_271026",
+  "titulo": "Consejo de Ministros 27/10/2026",
+  "video": "videos/consejo_271026.mp4",
+  "resultados_vision": "PAULA/consejo_integrado/resultados_consejo_271026",
+  "salida": "FIRDAOUS/salidas/consejo_271026",
+  "fuente": "https://www.lamoncloa.gob.es/consejodeministros/resumenes/Paginas/2026/271026-rueda-prensa-ministros.aspx",
+  "excluir_planos": [],
+  "umbrales": {
+    "max_personas_primer_plano": 3,
+    "min_area_primer_plano": 25,
+    "min_area_plano_medio": 15,
+    "min_area_persona": 3
+  },
+  "modelo_whisper": "medium",
+  "grupos": [
+    {
+      "id": "A",
+      "texto": "",
+      "nombre": "Elma Saiz",
+      "persona": "elma_saiz",
+      "categoria": "mujer"
+    },
+    {
+      "id": "B",
+      "texto": "",
+      "nombre": "Milagros Tolón",
+      "persona": "milagros_tolon",
+      "categoria": "mujer"
+    },
+    {
+      "id": "C",
+      "texto": "",
+      "nombre": "Isabel Rodríguez",
+      "persona": "isabel_rodriguez",
+      "categoria": "mujer"
+    }
+  ],
+  "asignacion_manual": {
+    "3": "A",
+    "5": "A",
+    "7": "A",
+    "9": "A",
+    "11": "B",
+    "13": "C",
+    "15": "C"
+  }
+}

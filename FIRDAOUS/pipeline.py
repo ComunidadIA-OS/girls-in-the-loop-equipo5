@@ -33,6 +33,8 @@ def construir_planos(cfg):
         filas.append({
             "plano": int(p["plano"]), "inicio_s": p["inicio_s"], "fin_s": p["fin_s"],
             "dur_s": p["fin_s"] - p["inicio_s"], "n_tracks": len(t),
+            # personas de tamaño apreciable: los tracks diminutos (reflejos, fondo) no cuentan para el primer plano
+            "n_grandes": int((t["area_media_pct"] >= cfg["umbrales"].get("min_area_persona", 3)).sum()),
             "track_principal": pr["track_id"] if pr is not None else "",
             "area_pct": pr["area_media_pct"] if pr is not None else 0.0,
             "rotulos": textos,
@@ -46,23 +48,95 @@ def clasificar(df, cfg):
     def tipo(f):
         if f["n_tracks"] == 0 or f["plano"] in cfg["excluir_planos"]:
             return "excluir"
-        if f["n_tracks"] <= u["max_personas_primer_plano"] and f["area_pct"] >= u["min_area_primer_plano"]:
+        if f["n_grandes"] <= u["max_personas_primer_plano"] and f["area_pct"] >= u["min_area_primer_plano"]:
             return "primer_plano"
         if f["area_pct"] >= u["min_area_plano_medio"]:
             return "plano_medio"
         return "plano_general"
 
+    df["tipo"] = df.apply(tipo, axis=1)
+
+    # Línea de tiempo publicada por la fuente (La Moncloa: marcas de intervención de cada persona, solo en la
+    # exposición). Cada tramo va de una marca a la siguiente; el último acaba donde empieza el turno de preguntas
+    # (primer plano de la sala tras la última marca). Se suma "desfase_s" si el vídeo no empieza donde el de la fuente.
+    marcas = sorted(cfg.get("intervenciones", []), key=lambda m: m["inicio_s"])
+    desfase = cfg.get("desfase_s", 0)
+    tramos = []
+    if marcas:
+        ultima = marcas[-1]["inicio_s"] + desfase
+        sala = df.loc[(df["tipo"] == "plano_medio") & (df["inicio_s"] > ultima), "inicio_s"]
+        fin_expo = sala.min() if len(sala) else float("inf")
+        tramos = [(m["inicio_s"] + desfase, s["inicio_s"] + desfase if s else fin_expo, m["grupo"])
+                  for m, s in zip(marcas, marcas[1:] + [None])]
+
+    def por_linea_tiempo(f):
+        solape = {}
+        for a, b, g in tramos:
+            solape[g] = solape.get(g, 0) + max(0.0, min(b, f["fin_s"]) - max(a, f["inicio_s"]))
+        mejor = max(solape, key=solape.get, default=None)
+        return mejor if mejor and solape[mejor] >= 0.5 * f["dur_s"] else None
+
     def grupo(f):
         if f["tipo"] != "primer_plano":
-            return ""
+            return "", ""
+        if tramos and por_linea_tiempo(f):
+            return por_linea_tiempo(f), "linea_tiempo"
         for g in cfg["grupos"]:
-            if g["texto"] == "" or g["texto"] in f["rotulos"]:
-                return g["id"]
-        return "?"
+            if (g["texto"] == "" and not tramos) or (g["texto"] and g["texto"] in f["rotulos"]):
+                return g["id"], "rotulo"
+        return "?", ""
 
-    df["tipo"] = df.apply(tipo, axis=1)
-    df["grupo"] = df.apply(grupo, axis=1)
+    df[["grupo", "asignado_por"]] = df.apply(grupo, axis=1, result_type="expand")
+    if tramos:
+        parecido(df, cfg)
+    # Asignación hecha a mano (opcional): manda sobre todo lo anterior
+    manual = {int(k): v for k, v in cfg.get("asignacion_manual", {}).items()}
+    for i in df.index[(df["tipo"] == "primer_plano") & df["plano"].isin(manual)]:
+        df.loc[i, ["grupo", "asignado_por"]] = [manual[int(df.loc[i, "plano"])], "manual"]
     return df
+
+
+def huella(cfg, track, n=6):
+    """Histograma de color (tono y saturación) de los recortes de un track: ropa, pelo, fondo del atril.
+    Sirve para reconocer a la MISMA persona dentro del mismo vídeo; no estima ningún rasgo de la persona."""
+    import cv2
+    rec = huella.recortes.get(cfg["resultados_vision"])
+    if rec is None:
+        rec = huella.recortes[cfg["resultados_vision"]] = pd.read_csv(f"{cfg['resultados_vision']}/recortes.csv")
+    r = rec[rec["track"] == track]
+    hs = []
+    for ruta in r["path"].iloc[np.linspace(0, len(r) - 1, min(n, len(r))).astype(int)] if len(r) else []:
+        img = cv2.imread(os.path.join(cfg["resultados_vision"], ruta))
+        if img is None:
+            continue
+        hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+        h = cv2.calcHist([hsv], [0, 1], None, [30, 32], [0, 180, 0, 256])
+        hs.append(cv2.normalize(h, h).flatten())
+    return np.mean(hs, axis=0) if hs else None
+
+
+huella.recortes = {}
+
+
+def parecido(df, cfg):
+    """Primeros planos sin marca de la fuente (turno de preguntas): se asignan a la persona de la exposición
+    cuyo aspecto en este mismo vídeo es más parecido."""
+    import cv2
+    pp = df["tipo"] == "primer_plano"
+    ref = {}
+    for _, f in df[pp & (df["asignado_por"] == "linea_tiempo")].iterrows():
+        h = huella(cfg, f["track_principal"])
+        if h is not None:
+            ref.setdefault(f["grupo"], []).append(h)
+    ref = {g: np.mean(v, axis=0).astype("float32") for g, v in ref.items()}
+    if not ref:
+        return
+    for i in df.index[pp & (df["grupo"] == "?")]:
+        h = huella(cfg, df.loc[i, "track_principal"])
+        if h is None:
+            continue
+        sim = {g: cv2.compareHist(r, h.astype("float32"), cv2.HISTCMP_CORREL) for g, r in ref.items()}
+        df.loc[i, ["grupo", "asignado_por"]] = [max(sim, key=sim.get), f"parecido ({max(sim.values()):.2f})"]
 
 
 # ---------- Fase 1: revisar ----------
@@ -82,7 +156,8 @@ def fase_revisar(cfg):
         origen = os.path.join(cfg["resultados_vision"], fila["path"])
         if not os.path.exists(origen):
             continue
-        carpeta = f"{out}/revision/{f['tipo']}" + (f"_{f['grupo']}" if f["grupo"] else "")
+        sufijo = {"": "", "?": "_sin_grupo"}.get(f["grupo"], f"_{f['grupo']}")   # "?" no vale en nombres de carpeta de Windows
+        carpeta = f"{out}/revision/{f['tipo']}{sufijo}"
         os.makedirs(carpeta, exist_ok=True)
         shutil.copy(origen, f"{carpeta}/plano{int(f['plano']):02d}.jpg")
 

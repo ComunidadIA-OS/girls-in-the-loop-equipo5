@@ -1,0 +1,15 @@
+{
+  "estado": "completo",
+  "duracion_intervalo_s": 1252.04,
+  "tiempo_muestreado_s": 1252.04,
+  "tiempo_con_tracks_s": 1252.04,
+  "tracks": 95,
+  "personas_confirmadas": 0,
+  "detecciones": 5941,
+  "muestras_ocr": 612,
+  "calidad_validada": false,
+  "categorias": "Solo etiquetas documentadas; no inferidas de imágenes",
+  "identidad": "Tracks por plano; unión entre planos requiere confirmación",
+  "medicion": "Cada muestra representa hasta la siguiente muestra o el fin del plano. No interpola detecciones perdidas.",
+  "audio": "No se analiza audio ni se atribuye quién habla"
+}

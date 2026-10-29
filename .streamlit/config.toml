@@ -1,0 +1,25 @@
+[server]
+# Vídeos de ruedas de prensa completas (MB)
+maxUploadSize = 4096
+
+[browser]
+gatherUsageStats = false
+
+# Estética Girls in the Loop: morados, títulos pixelados (Pixelify Sans) y texto en Inter
+[theme]
+base = "light"
+primaryColor = "#6d28d9"
+backgroundColor = "#f6f2fd"
+secondaryBackgroundColor = "#ece5f8"
+textColor = "#24163f"
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+headingFont = "'Pixelify Sans':https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;600;700&display=swap"
+baseRadius = "0.75rem"
+borderColor = "#e3d9f5"
+
+[theme.sidebar]
+backgroundColor = "#24123f"
+secondaryBackgroundColor = "#3a2163"
+textColor = "#efe8fd"
+primaryColor = "#c4a8ff"
+borderColor = "#4a2d78"

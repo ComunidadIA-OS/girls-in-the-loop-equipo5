@@ -1,0 +1,9 @@
+.git
+**/entorno
+PAULA/entorno_genero
+PAULA/entorno_ocr
+videos
+cola
+*.mp4
+*.log
+**/__pycache__
