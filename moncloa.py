@@ -148,9 +148,10 @@ def preparar(info):
         modelo = VISION / "modelos" / "yolo11m.pt"
         calidad = ({"muestras_s": 10, "imgsz": 960, "ocr_cada_s": 0.5} if gpu else
                    {"muestras_s": 2, "imgsz": 640, "ocr_cada_s": 2.0})
-        guardar(ruta_v, {"video": str(RAIZ / cfg["video"]), "salida": str(RAIZ / cfg["resultados_vision"]),
+        # rutas relativas a la raíz del repositorio (la cola y las instrucciones se ejecutan desde ahí)
+        guardar(ruta_v, {"video": cfg["video"], "salida": cfg["resultados_vision"],
                          "inicio_s": 0.0, "fin_s": None, **calidad, "exigir_gpu": gpu,
-                         "modelo": str(modelo) if modelo.exists() else "yolo11m.pt", "conf_ocr": 0.6})
+                         "modelo": str(modelo.relative_to(RAIZ)) if modelo.exists() else "yolo11m.pt", "conf_ocr": 0.6})
     return Path(ruta_m), ruta_v
 
 

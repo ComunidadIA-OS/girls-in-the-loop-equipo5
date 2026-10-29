@@ -568,8 +568,9 @@ def formulario_nuevo():
         **{"inicio_s": 0.0, "fin_s": None, "conf_ocr": 0.6},
         **{k: v for k, v in base.items() if k not in ("video", "salida", "modelo", *calidad)},
         **calidad, "exigir_gpu": HAY_GPU,
-        "video": str((RAIZ / video).resolve()), "salida": str(VISION / f"resultados_{nombre}"),
-        "modelo": str(modelo) if modelo.exists() else "yolo11m.pt"})
+        # rutas relativas a la raíz del repositorio, para que el análisis se pueda repetir en otra máquina
+        "video": video, "salida": f"PAULA/consejo_integrado/resultados_{nombre}",
+        "modelo": str(modelo.relative_to(RAIZ)) if modelo.exists() else "yolo11m.pt"})
     plantilla = leer(FIR / "config_131026.json")
     guardar(FIR / f"config_{nombre}.json", {
         "nombre": nombre, "titulo": titulo, "codigo": codigo, "video": video,
