@@ -506,7 +506,7 @@ def pie():
     html('<div class="pie"><div class="fila">' + "".join(
         f'<img src="{b64(ASSETS / "logos" / f)}" alt="{alt}" title="{alt}">' for f, alt in logos) +
          '</div><small>Reto «Mujeres por la IA Abierta» · SEDIA · Colaboran UPC-IDEAI, COEINF (donesCOEINF) y OVHcloud · '
-         'Equipo 5: Firdaous, Noa y Paula</small></div>')
+         'Equipo 5: Firdaous, Nouhaila y Paula</small></div>')
 
 
 # ---------- Pestaña: nuevo análisis / continuar ----------

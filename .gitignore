@@ -241,3 +241,6 @@ cola/
 # Audio extraído (se regenera) y análisis privados de prueba
 *.wav
 *consejo_de_ministros_27_10_2026_*
+
+# Presentaciones y guion: se entregan aparte, no van al repositorio
+presentacion/
